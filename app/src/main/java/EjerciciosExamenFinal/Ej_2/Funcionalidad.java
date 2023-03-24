@@ -31,7 +31,7 @@ public class Funcionalidad implements IMobile{
 
     @Override
     public void operation(Funcionalidad funcionalidad) {
-        mobile.operation(funcionalidad);
+        mobile.operation(this);
         System.out.println("--- AGREGANDO FUNCIONALIDAD ---");
     }
 

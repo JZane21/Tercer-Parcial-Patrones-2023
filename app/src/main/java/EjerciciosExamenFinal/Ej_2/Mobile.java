@@ -58,12 +58,19 @@ public class Mobile implements IMobile{
 
     @Override
     public void operation(Funcionalidad funcionalidad) {
+        System.out.println("<><><><><><>");
         if(funcionalidad instanceof Ram){
             Ram aux = (Ram) funcionalidad;
             double memoriaAnterior = getMemoriaRam();
+            System.out.println("RAM ORIGINAL: "+memoriaAnterior);
             setMemoriaRam(aux.getCapacidad() + memoriaAnterior);
+            System.out.println("NUEVA RAM: "+getMemoriaRam());
         }
-        
+        double aux = getCosto();
+        System.out.println("COSTO ORIGINAL: "+aux);
+        setCosto(aux+funcionalidad.getCosto());
+        System.out.println("NUEVO COSTO: "+getCosto());
+        System.out.println("<><><><><><>");
     }
 
     public void infoTelefono(){
